@@ -93,7 +93,6 @@ namespace TicTacToe
         Console.Write($"{c}");
         Console.ResetColor();
         Console.Write(" ");
-
       }
 
       else if (c == 'O')
@@ -102,7 +101,6 @@ namespace TicTacToe
         Console.Write($"{c}");
         Console.ResetColor();
         Console.Write(" ");
-
       }
       else
       {
