@@ -84,7 +84,7 @@ namespace TicTacToe
     }
 
     /// <summary>
-    /// Отрисовываем знак в игровом поле
+    /// Отрисовываем знак в игровом поле.
     /// </summary>
     /// <param name="sign">Знак игрока.</param>
     static void DrawSign(char sign)
@@ -110,7 +110,7 @@ namespace TicTacToe
     }
 
     /// <summary>
-    /// Проверяем на выигрыш
+    /// Проверяем на выигрыш.
     /// </summary>
     /// <param name="field">Игровое поле.</param>
     /// <returns>True, если есть выигрышная комбинация, иначе - false.</returns>
@@ -127,7 +127,7 @@ namespace TicTacToe
     }
 
     /// <summary>
-    /// Проверяем на ничью
+    /// Проверяем на ничью.
     /// </summary>
     /// <param name="field">Игровое поле.</param>
     /// <returns>True, если ничья, иначе - false.</returns>
