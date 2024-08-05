@@ -1,12 +1,19 @@
 ﻿using System;
 
-namespace TicTacToe
+namespace Game
 {
-  internal class Program
+  /// <summary>
+  /// Игра крестики нолики.
+  /// </summary>
+  internal class TicTacToe
   {
     const char crossSign = 'X';
     const char roundSign = 'O';
 
+    /// <summary>
+    /// Игровой движок.
+    /// </summary>
+    /// <param name="args"></param> 
     static void Main(string[] args)
     {
       Console.Write("Хотите сыграть против другого игрока? [y/n] ");
@@ -24,7 +31,7 @@ namespace TicTacToe
           Console.Write($"Ход {currentPlayer}: ");          
           ConsoleKeyInfo cki = Console.ReadKey(true);
           bool correctInput = int.TryParse(cki.KeyChar.ToString(), out int choise) && 
-            choise > 0 && choise <= 9 && field[choise - 1] != crossSign && field[choise - 1] != roundSign;
+            choise > 0 && choise <= 9 && Char.IsDigit(field[choise - 1]);
 
           if (correctInput)
           {
@@ -49,8 +56,7 @@ namespace TicTacToe
           }
           else
           {
-            Console.Write("Неверный ход!");
-            Console.WriteLine();
+            Console.WriteLine("Неверный ход!");
           }         
         }
       } 
@@ -89,23 +95,14 @@ namespace TicTacToe
     static void DrawSign(char sign)
     {
       if (sign == crossSign)
-      {
         Console.BackgroundColor = ConsoleColor.Blue;
-        Console.Write($"{sign}");
-        Console.ResetColor();
-        Console.Write(" ");
-      }
-      else if (sign == roundSign)
-      {
-        Console.BackgroundColor = ConsoleColor.Red;
-        Console.Write($"{sign}");
-        Console.ResetColor();
-        Console.Write(" ");
-      }
-      else
-      {
-        Console.Write($"{sign} ");
-      }
+      
+      if (sign == roundSign)
+        Console.BackgroundColor = ConsoleColor.Red;        
+
+      Console.Write($"{sign}");
+      Console.ResetColor();
+      Console.Write(" ");
     }
 
     /// <summary>
