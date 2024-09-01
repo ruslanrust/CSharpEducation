@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe", "TicTacToe\TicTacToe.csproj", "{A7D774DF-AFC1-43E4-8B52-D810CD9740BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe", "TicTacToe\TicTacToe.csproj", "{A7D774DF-AFC1-43E4-8B52-D810CD9740BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phonebook", "Phonebook\Phonebook.csproj", "{E8D5519B-59CB-4F4D-A41F-31E4501DD37C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{A7D774DF-AFC1-43E4-8B52-D810CD9740BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7D774DF-AFC1-43E4-8B52-D810CD9740BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7D774DF-AFC1-43E4-8B52-D810CD9740BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8D5519B-59CB-4F4D-A41F-31E4501DD37C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8D5519B-59CB-4F4D-A41F-31E4501DD37C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8D5519B-59CB-4F4D-A41F-31E4501DD37C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8D5519B-59CB-4F4D-A41F-31E4501DD37C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
