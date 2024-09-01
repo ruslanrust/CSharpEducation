@@ -26,10 +26,10 @@
         {
           case "1":
             Console.WriteLine("Добавление нового абонента");
-            Console.WriteLine("Введите имя: ");
+            Console.Write("Введите имя: ");
             name = Console.ReadLine();
 
-            Console.WriteLine("Введите номер телефона: ");
+            Console.Write("Введите номер телефона: ");
             phone = Console.ReadLine();
 
             abonent = new Abonent(name, phone);
@@ -44,15 +44,14 @@
             {
               Console.WriteLine($"Абонент с именем {name} с номером телефона {phone} уже существует\n");
             }
-            
             break;
 
           case "2":
             Console.WriteLine("Удаление абонента");
-            Console.WriteLine("Введите имя: ");
+            Console.Write("Введите имя: ");
             name = Console.ReadLine();
 
-            Console.WriteLine("Введите номер телефона: ");
+            Console.Write("Введите номер телефона: ");
             phone = Console.ReadLine();
 
             abonent = new Abonent(name, phone);
@@ -67,30 +66,37 @@
             {
               Console.WriteLine($"Абонент с именем {name} с номером телефона {phone} не существует\n");
             }
-
             break;
 
           case "3":
-            Console.WriteLine("Номер телефона: ");
+            Console.WriteLine("Поиск абонента по номеру телефона");
+            Console.Write("Введите номер телефона: ");
             phone = Console.ReadLine();
 
             Console.WriteLine("Найдены следующие абоненты:");
+
             phonebook.FindAbonentByPhone(phone);
+
             Console.WriteLine();
             break;
 
           case "4":
-            Console.WriteLine("Имя абонента: ");
+            Console.WriteLine("Поиск абонента по имени");
+            Console.Write("Введите имя: ");
             name = Console.ReadLine();
 
             Console.WriteLine("Найдены следующие абоненты:");
+
             phonebook.FindAbonentByName(name);
+
             Console.WriteLine();
             break;
 
           case "5":
             Console.WriteLine("Список всех абонентов:");
+
             phonebook.PrintAllAbonents();
+
             Console.WriteLine();
             break;
 
