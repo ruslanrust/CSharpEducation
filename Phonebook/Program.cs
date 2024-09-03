@@ -5,7 +5,9 @@
     static void Main(string[] args)
     {
       Console.WriteLine("Добро пожаловать в вашу телефонную книгу");
-      Phonebook phonebook = new Phonebook();
+
+      Phonebook phonebook = Phonebook.GetInstance();
+
       string? name = string.Empty;
       string? phone = string.Empty;
       Abonent abonent = new Abonent(name, phone);

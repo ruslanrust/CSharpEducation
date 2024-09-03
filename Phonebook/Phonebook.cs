@@ -1,12 +1,24 @@
-﻿using System.Xml.Linq;
-
-namespace Phonebook
+﻿namespace Phonebook
 {
   internal class Phonebook
   {
-    public List<Abonent> Abonents { get; set; }
-    const char separator = '-';
-    const string path = "../../../phonebook.txt";
+    #region Поля
+    private char separator = '-';
+    private string path = "../../../phonebook.txt";
+    private static Phonebook instance;
+    #endregion
+
+    #region Свойства
+    private List<Abonent> Abonents { get; set; }
+    #endregion
+
+    #region Методы
+    public static Phonebook GetInstance()
+    {
+      if (instance == null)
+        instance = new Phonebook();
+      return instance;
+    }
 
     public void PrintAbonentInfo(Abonent abonent)
     {
@@ -68,8 +80,10 @@ namespace Phonebook
       }
       streamWriter.Close();
     }
+    #endregion
 
-    public Phonebook() 
+    #region Конструкторы
+    private Phonebook() 
     {
       this.Abonents = new List<Abonent>();
 
@@ -92,8 +106,9 @@ namespace Phonebook
         }
 
         streamReader.Close();
-      }    
+      }
     }
+    #endregion
   }
 }
 
