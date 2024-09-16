@@ -1,75 +1,81 @@
 ﻿namespace Phonebook
 {
+  /// <summary>
+  /// Телефонная книга.
+  /// </summary>
   internal class Phonebook
   {
-    #region Поля
-    private char separator = '-';
-    private string path = "../../../phonebook.txt";
-    private static Phonebook instance;
-    #endregion
+    #region Поля и свойства
 
-    #region Свойства
-    private List<Abonent> Abonents { get; set; }
+    public static char separator = '-';
+
+    private string path = "../../../phonebook.txt";
+
+    /// <summary>
+    /// Абоненты.
+    /// </summary>
+    public List<Abonent> Abonents;
+
+    private static Phonebook instance;
+
+    public static Phonebook GetInstance => instance == null ? new Phonebook() : instance;
+
     #endregion
 
     #region Методы
-    public static Phonebook GetInstance()
-    {
-      if (instance == null)
-        instance = new Phonebook();
-      return instance;
-    }
-
-    public void PrintAbonentInfo(Abonent abonent)
-    {
-      Console.WriteLine($"{abonent.Name} {separator} {abonent.Phone}");
-    }
-
-    public void PrintAllAbonents()
-    {
-      foreach (Abonent abonent in this.Abonents)
-      {
-        PrintAbonentInfo(abonent);
-      }
-    }
-
+    /// <summary>
+    /// Добавить абонента в список.
+    /// </summary>
+    /// <param name="abonent">Абонент, которого добавляем.</param>
     public void AddAbonent(Abonent abonent)
     {
       this.Abonents.Add(abonent);
       RewriteFile();
     }
 
+    /// <summary>
+    /// Удалить абонента из списка.
+    /// </summary>
+    /// <param name="deletedAbonent">Абонент, которого удаляем.</param>
     public void DeleteAbonent(Abonent deletedAbonent)
     {
-      this.Abonents.RemoveAll(abonent => abonent.Name == deletedAbonent.Name && abonent.Phone == deletedAbonent.Phone);
+      this.Abonents.RemoveAll(abonent => abonent.Equals(deletedAbonent));
       RewriteFile();
     }
 
+    /// <summary>
+    /// Проверить, есть ли такой абонент в списке.
+    /// </summary>
+    /// <param name="findedAbonent">Абонент, которого проверяем.</param>
+    /// <returns></returns>
     public bool IsContain(Abonent findedAbonent)
     {
-      return this.Abonents.Exists(abonent => abonent.Name == findedAbonent.Name && abonent.Phone == findedAbonent.Phone);
+      return this.Abonents.Exists(abonent => abonent.Equals(findedAbonent));
     }
 
-    public void FindAbonentByName(string name)
+    /// <summary>
+    /// Найти абонентов по имени в списке.
+    /// </summary>
+    /// <param name="name">Имя абонента, которого ищем.</param>
+    /// <returns></returns>
+    public List<Abonent> FindAbonentByName(string name)
     {
-      List<Abonent> result = this.Abonents.FindAll(abonent => abonent.Name == name);
-
-      foreach(Abonent abonent in result)
-      {
-        PrintAbonentInfo(abonent);
-      }
+      return this.Abonents.FindAll(abonent => abonent.Name == name);
     }
 
-    public void FindAbonentByPhone(string phone)
+    /// <summary>
+    /// Найти абонентов по номеру телефона в списке.
+    /// </summary>
+    /// <param name="phone">Номер телефона абонента, которого ищем.</param>
+    /// <returns></returns>
+    public List<Abonent> FindAbonentByPhone(string phone)
     {
-      List<Abonent> result = this.Abonents.FindAll(abonent => abonent.Phone == phone);
-
-      foreach (Abonent abonent in result)
-      {
-        PrintAbonentInfo(abonent);
-      }
+      return this.Abonents.FindAll(abonent => abonent.Phone == phone);
     }
 
+    /// <summary>
+    /// Перезаписать файл, в котором хранятся абоненты.
+    /// </summary>
     public void RewriteFile()
     {
       StreamWriter streamWriter = new StreamWriter(path);
@@ -80,9 +86,14 @@
       }
       streamWriter.Close();
     }
+
     #endregion
 
     #region Конструкторы
+
+    /// <summary>
+    /// Конструктор.
+    /// </summary>
     private Phonebook() 
     {
       this.Abonents = new List<Abonent>();
@@ -94,7 +105,7 @@
       else
       {
         StreamReader streamReader = new StreamReader(path);
-        string? line;
+        string line;
 
         while ((line = streamReader.ReadLine()) != null)
         {
@@ -108,6 +119,7 @@
         streamReader.Close();
       }
     }
+
     #endregion
   }
 }

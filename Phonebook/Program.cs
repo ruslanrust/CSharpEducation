@@ -1,16 +1,23 @@
 ﻿namespace Phonebook
 {
+  /// <summary>
+  /// Телефонная книга.
+  /// </summary>
   public class Program
   {
+    /// <summary>
+    /// Запуск программы, основная логика.
+    /// </summary>
+    /// <param name="args"></param>
     static void Main(string[] args)
     {
       Console.WriteLine("Добро пожаловать в вашу телефонную книгу");
 
-      Phonebook phonebook = Phonebook.GetInstance();
+      Phonebook phonebook = Phonebook.GetInstance;
 
-      string? name = string.Empty;
-      string? phone = string.Empty;
-      Abonent abonent = new Abonent(name, phone);
+      string name;
+      string phone;
+      Abonent abonent;
 
       while (true)
       {
@@ -22,7 +29,7 @@
         Console.WriteLine("5 - отобразить всех абонентов");
         Console.WriteLine("Нажмите 'x' для выхода\n");
 
-        string? userInput = Console.ReadKey(true).KeyChar.ToString();
+        string userInput = Console.ReadKey(true).KeyChar.ToString();
 
         switch (userInput)
         {
@@ -77,7 +84,9 @@
 
             Console.WriteLine("Найдены следующие абоненты:");
 
-            phonebook.FindAbonentByPhone(phone);
+            List<Abonent> findedAbonents = phonebook.FindAbonentByPhone(phone);
+
+            findedAbonents.ForEach(Console.WriteLine);
 
             Console.WriteLine();
             break;
@@ -89,15 +98,17 @@
 
             Console.WriteLine("Найдены следующие абоненты:");
 
-            phonebook.FindAbonentByName(name);
+            findedAbonents = phonebook.FindAbonentByName(name);
 
+            findedAbonents.ForEach(Console.WriteLine);
+            
             Console.WriteLine();
             break;
 
           case "5":
             Console.WriteLine("Список всех абонентов:");
 
-            phonebook.PrintAllAbonents();
+            phonebook.Abonents.ForEach(Console.WriteLine);
 
             Console.WriteLine();
             break;
@@ -110,7 +121,6 @@
           default:
             Console.WriteLine("Вы нажали неверную клавишу");
             return;
-
         }
       }      
     }
