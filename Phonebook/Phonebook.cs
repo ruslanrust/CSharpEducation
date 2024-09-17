@@ -23,6 +23,7 @@
     #endregion
 
     #region Методы
+      
     /// <summary>
     /// Добавить абонента в список.
     /// </summary>
