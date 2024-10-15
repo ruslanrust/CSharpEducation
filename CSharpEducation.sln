@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe", "TicTacToe\TicT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Phonebook", "Phonebook\Phonebook.csproj", "{E8D5519B-59CB-4F4D-A41F-31E4501DD37C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserSystem", "UserSystem\UserSystem.csproj", "{F27A5EA7-4B35-4C50-A106-1BEAA08F185D}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeSystem", "EmployeeSystem\EmployeeSystem.csproj", "{3BAAC97C-168B-4656-A644-F0AC29C5C17F}"
 EndProject
 Global
@@ -23,6 +25,10 @@ Global
 		{E8D5519B-59CB-4F4D-A41F-31E4501DD37C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8D5519B-59CB-4F4D-A41F-31E4501DD37C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8D5519B-59CB-4F4D-A41F-31E4501DD37C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F27A5EA7-4B35-4C50-A106-1BEAA08F185D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F27A5EA7-4B35-4C50-A106-1BEAA08F185D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F27A5EA7-4B35-4C50-A106-1BEAA08F185D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F27A5EA7-4B35-4C50-A106-1BEAA08F185D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3BAAC97C-168B-4656-A644-F0AC29C5C17F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3BAAC97C-168B-4656-A644-F0AC29C5C17F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BAAC97C-168B-4656-A644-F0AC29C5C17F}.Release|Any CPU.ActiveCfg = Release|Any CPU
